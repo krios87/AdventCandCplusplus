@@ -20,7 +20,7 @@ int size = 1000;
 //https://adventofcode.com/2021/day/5
 int main(void) {
 	FILE *myfile;
-		myfile = fopen("C:/Users/kristoferrosquist/Desktop/ESS/FBIS/Useful things/ChristmasCalendar/2021/day5_input.txt", "r");
+		myfile = fopen("../../../Advent/2021_day5.txt", "r");
 		char *buff;
 		buff = malloc(555*sizeof(char));
 		int i,j,k,l;
@@ -52,16 +52,13 @@ int main(void) {
 		char Onevalue[3] = {'\0','\0','\0'};
 		while(fgets(buff, 555, myfile)) { //get file row (until \n)
 
-			//if(j==0){
 				l=0;
-			//	printf("Size: %lu \n", strlen(buff)); //sizeof(buff) will always be 8 since it is size of pointer!
 				length = strlen(buff); //get length and do for loop or do while loop
 
 				while(*(buff+l)!=0){
 					stringel = *(buff+l);
 					if(isdigit(stringel)){
 						numberlength++;
-						//printf("length %d %c \n", numberlength, stringel);
 						lastValue = 1;
 					} else{
 						if(lastValue){
@@ -149,9 +146,6 @@ int main(void) {
 					for(j=0;j<=abs(lenX);j++){
 						for(k=0;k<=abs(lenY);k++){
 							if(j==k){
-								if(i==5){
-								//	printf("X %d, Y %d \n",FirstX[i]+lenX-xsign*j,FirstY[i]+lenY-ysign*k );
-								}
 								BigMatrix[FirstX[i]+lenX-xsign*j][FirstY[i]+lenY-ysign*k]++;
 							}
 						}
@@ -164,12 +158,8 @@ int main(void) {
 
 		}
 
-		for(i=0;i<20;i++){
-
-		//	printf("%d ", BigMatrix[i][4]);
-		}
-		int count;
-		count = 0;
+		
+		int count = 0;
 		for(i=0;i<size;i++)
 			for(j=0;j<size;j++)
 				if(BigMatrix[i][j]>1)

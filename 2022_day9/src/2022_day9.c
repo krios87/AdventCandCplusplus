@@ -111,7 +111,7 @@ int main(void) {
 	row = malloc(size*sizeof(char));
 	int NbrOfSteps = 0;
 
-	myfile = fopen("C:/Users/kristoferrosquist/Desktop/Training/Christmas_Calendar/2022/day9_input.txt", "r");
+	myfile = fopen("../../../Advent/2022_day9.txt", "r");
 	//get map size and allocate memory
 	while(fgets(row, size, myfile)){ //get file row (until \n or EOF) and add 0 to string
 
@@ -137,8 +137,6 @@ int main(void) {
 				MoveUp(TailCoordX, TailCoordY, &HeadCoordX, &HeadCoordY, &TailCoordX, &TailCoordY);
 				AddNewPointToArray(pPoints,&NbrOfPoints,TailCoordX,TailCoordY);
 			}
-//			printf("tailX %d, tailY %d pos %d\n",TailCoordX,TailCoordY,NbrOfPoints);
-//			printf("headX %d, headY %d pos %d\n",HeadCoordX,HeadCoordY,NbrOfPoints);
 		}else if(strstr(row,"D ")){ //
 			string = strstr(row, "D ")+2;
 			NbrOfSteps = atoi(string);
@@ -147,29 +145,10 @@ int main(void) {
 				AddNewPointToArray(pPoints,&NbrOfPoints,TailCoordX,TailCoordY);
 
 			}
-//			printf("tailX %d, tailY %d pos %d\n",TailCoordX,TailCoordY,NbrOfPoints);
-//			printf("headX %d, headY %d pos %d\n",HeadCoordX,HeadCoordY,NbrOfPoints);
 		}
 	}
 
 	printf("headX %d, headY %d pos %d\n",HeadCoordX,HeadCoordY,NbrOfPoints);
 
-//	int printPoint;
-//	for(int j=-200;j<200;j++){
-//		for(int i=-200;i<200;i++){
-//			printPoint = 0;
-//			for(int k=0;k<NbrOfPoints;k++){
-//				if((pPoints[k].X==i) && (pPoints[k].Y==j)){
-//					printPoint = 1;
-//				}
-//			}
-//			if(printPoint){
-//				printf("# ");
-//			}else{
-//				printf(". ");
-//			}
-//		}
-//		printf("\n");
-//	}
 	return EXIT_SUCCESS;
 }

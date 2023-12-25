@@ -14,9 +14,8 @@ int AddToMovingAverageArray(int array[], int value);
 
 int main(void) {
 	//https://adventofcode.com/2021/day/1
-	//puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
 	FILE *myfile;
-		myfile = fopen("C:/Users/kristoferrosquist/Desktop/ESS/FBIS/Useful things/ChristmasCalendar/2021/day1_input.txt", "r");
+		myfile = fopen("../../../Advent/2021_day1.txt", "r");
 		char buff[255];
 		int i,j;
 		int valarray[2000];
@@ -34,15 +33,6 @@ int main(void) {
 		while(fgets(buff, 255, myfile)) { //get file row (until \n)
 
 				valarray[j] = atoi(buff);
-				//printf("val: %d \n", valarray[j]);
-				//if(j>(window-1)){
-
-					//if(valarray[j] > prevVal){
-						//countlarger++;
-						//printf("Valll %d \n", valarray[j]);
-					//}
-				//}
-				//prevVal = valarray[j];
 			j++;
 		}
 
@@ -59,10 +49,6 @@ int main(void) {
 				countlarger++;
 			}
 			prevSum = newSum;
-
-				for(j=0;j<3;j++){
-				//	printf("value: %d, element: %d \n",sum[j],j );
-				}
 
 		}
 

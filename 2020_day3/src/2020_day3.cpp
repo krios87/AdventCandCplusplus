@@ -18,7 +18,6 @@
 
 using namespace std;
 
-//#define DEBUGGING
 
 template <typename T>
 T myfunc(T &value, T &value2){
@@ -40,17 +39,12 @@ bool IsValidpassport(map<string,string>& passport){
 
 	int iyr = stoi(passport["iyr"]);
 	if(iyr < 2010 || iyr > 2020){
-#ifdef DEBUGGING
-		cout << "iyr invalid!!" <<endl;
-#endif
 		return false;
 	}
 
 	int eyr = stoi(passport["eyr"]);
 	if(eyr < 2020 || eyr > 2030){
-#ifdef DEBUGGING
-		cout << "eyr invalid!!" <<endl;
-#endif
+
 		return false;
 	}
 
@@ -63,18 +57,12 @@ bool IsValidpassport(map<string,string>& passport){
 		int hgt = stoi(passport["hgt"]);
 
 		if(hgt < 150 || hgt > 193){
-#ifdef DEBUGGING
-			cout << "hgt invalid!!" <<endl;
-#endif
 			return false;
 		}
 	}else if(((int)passport["hgt"].find("in")) !=-1){
 		int hgt = stoi(passport["hgt"]);
 
 		if(hgt < 59 || hgt > 76){
-#ifdef DEBUGGING
-			cout << "hgt invalid!!" <<endl;
-#endif
 			return false;
 		}
 	}else{
@@ -94,22 +82,13 @@ bool IsValidpassport(map<string,string>& passport){
 		for(auto &x: checkHaircolor){
 			countchar++;
 				if(!((x >= '0' && x <= '9') || (x >= 'a' && x <= 'f'))){  //can be both numbers or char
-#ifdef DEBUGGING
-					cout << "hcl invalid!!" << "aA" <<endl;
-#endif
 					return false;
 				}
 			}
 		if(countchar != 6){
-#ifdef DEBUGGING
-			cout << "hcl invalid!!" << "BB" <<endl;
-#endif
 		return false;
 		}
 	}else{
-#ifdef DEBUGGING
-		cout << "hcl invalid!!" << "XC" <<endl;
-#endif
 		return false;
 	}
 
@@ -125,9 +104,6 @@ bool IsValidpassport(map<string,string>& passport){
 		}
 	}
 	if ( compareeye == 0 ){
-#ifdef DEBUGGING
-		cout << "ecl invalid!!" <<endl;
-#endif
 		return false;
 	}
 
@@ -138,9 +114,6 @@ bool IsValidpassport(map<string,string>& passport){
 		for(auto &x: passport["pid"]){
 			count++;
 			if(!isdigit(x)){
-#ifdef DEBUGGING
-				cout << "pid invalid!!" << x << x << x <<endl;
-#endif
 				return false;
 			}
 
@@ -166,7 +139,7 @@ int* compute(int& a, int& b);
 int main() {
 	ifstream inFile;
 
-	inFile.open("C:/Users/Kristofer Rosquist/Desktop/HoT/Training/Advent/2020_day3.txt");
+	inFile.open("../../../Advent/2020_day3.txt");
 
 	string str;
 
@@ -195,8 +168,6 @@ int main() {
 					finddelim = str.find(' ');
 					string value = str.substr(0, finddelim);
 
-					//value = regex_replace( value,regex("\\r\\n|\\r|\\n"),""); //regex expression to remove new line
-
 					auto checknewline =[](auto ch){ return (ch == '\n' ||ch == '\r');};
 					value.erase(remove_if(value.begin(),value.end(),checknewline),value.end());  //or with remove_if
 
@@ -215,12 +186,6 @@ int main() {
 						countvalid++;
 					}
 				}
-
-
-				//for(auto &x: pairss){
-				//						cout << "key: " << x.first << " value: " << x.second << endl;//" . ";
-				//					}
-				//cout << endl ;//<< endl << endl;
 				pairss.clear();
 			}
 

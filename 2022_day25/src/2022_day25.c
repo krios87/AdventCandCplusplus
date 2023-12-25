@@ -74,7 +74,7 @@ int main(void) {
 
 
 	FILE *myfile;
-	myfile = fopen("C:/Users/kristoferrosquist/Desktop/Training/Christmas_Calendar/2022/day25_input.txt", "r");
+	myfile = fopen("../../../Advent/2022_day25.txt", "r");
 	char *row;
 	int size = 5000;
 	row = malloc(size*sizeof(char));
@@ -88,7 +88,6 @@ int main(void) {
 			value = 0;
 			while(charindex >= 0){
 				value += pow(5,(length-charindex))*calcval(*(row+charindex));
-				//printf("%c \n",*(row + length));
 
 				charindex--;
 

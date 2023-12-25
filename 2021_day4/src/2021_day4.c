@@ -110,7 +110,6 @@ int FindNumber(struct BingoBoard* board, int number){
 			if(number == board->matrix[i][j]){
 				found = 1;
 				board->crosses[i][j] = 1;
-				//printf("i %d j %d \n",i,j);
 				return found;
 			}
 		}
@@ -127,7 +126,6 @@ int CheckBingo(struct BingoBoard* board){
 		isBingorow = 1;
 		for(j=0;j<5;j++){
 			isBingorow = (isBingorow && (board->crosses[i][j]));
-			//printf("BING %d value: %d \n", isBingo,(board->crosses[i][j]));
 		}
 		if(isBingorow){
 			board->hasBingo = 1;
@@ -140,7 +138,6 @@ int CheckBingo(struct BingoBoard* board){
 		isBingocol = 1;
 		for(j=0;j<5;j++){
 			isBingocol = (isBingocol && (board->crosses[j][i]));
-			//printf("BING %d value: %d \n", isBingo,(board->crosses[i][j]));
 		}
 		if(isBingocol){
 			board->hasBingo = 1;
@@ -156,16 +153,12 @@ int CheckBingo(struct BingoBoard* board){
 int calcsumNotChecked(struct BingoBoard* board,int boardnum){
 	int sum;
 	int i,j;
-
 	sum = 0;
 
 	for(i=0;i<5;i++){
 		for(j=0;j<5;j++){
 			if(board->crosses[i][j]==0){
 				sum += board->matrix[i][j];
-				if(boardnum==1){
-			//	printf("check: %d \n",board->matrix[i][j]);
-				}
 			}
 		}
 	}
@@ -173,13 +166,10 @@ int calcsumNotChecked(struct BingoBoard* board,int boardnum){
 }
 
 int main(void) {
-	//puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
 
 	FILE *myfile;
-		myfile = fopen("C:/Users/kristoferrosquist/Desktop/ESS/FBIS/Useful things/ChristmasCalendar/2021/day4_input.txt", "r");
+		myfile = fopen("../../../Advent/2021_day4.txt", "r");
 		char buff[555];
-		//buff = malloc(255);
-		//char strings[2] = {'1','\0'};
 		int i,j,k,l;
 		int size = 10000;
 		int valarray[size];
@@ -230,9 +220,6 @@ int main(void) {
 						rowmatrix[row][k] = onerow[k];
 
 					}
-					for(i=0;i<5;i++){
-					//	printf("row %d row: %d \n",rowmatrix[row][i], row);
-					}
 
 					row++;
 					newrow = 0;
@@ -241,12 +228,6 @@ int main(void) {
 				else if (j>2){
 					//make matrix class and array of these bingo brickor
 					AddMatrix(Board[matrixnumber],rowmatrix,5);
-					for(k=0;k<5;k++){
-						for(i=0;i<5;i++){
-							//printf("row %d, row: %d \n",rowmatrix[k][i],matrixnumber);
-
-						}
-					}
 					matrixnumber++;
 					newrow=1;
 				}
@@ -256,7 +237,6 @@ int main(void) {
 
 			j++;
 		}
-		//AddMatrix(Board[matrixnumber],rowmatrix,5);
 
 
 

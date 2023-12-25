@@ -79,7 +79,7 @@ void SaveValuesInArray(struct Node* node,int* valueArray, int* myarrayIndex){
 int main(void) {
 
 	FILE *myfile;
-	myfile = fopen("C:/Users/kristoferrosquist/Desktop/Training/Christmas_Calendar/2022/day7_input.txt", "r");
+	myfile = fopen("../../../Advent/2022_day7.txt", "r");
 	char *row;
 	int size = 500;
 	row = malloc(size*sizeof(char));

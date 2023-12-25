@@ -32,7 +32,7 @@ int calcdistance(Sensor* sensor,int CoordX, int CoordY){
 
 int main(void) {
 	FILE *myfile;
-		myfile = fopen("C:/Users/kristoferrosquist/Desktop/Training/Christmas_Calendar/2022/day15_input.txt", "r");
+		myfile = fopen("../../../Advent/2022_day15.txt", "r");
 		char *row;
 		int size = 5000;
 		row = malloc(size*sizeof(char));
@@ -52,7 +52,7 @@ int main(void) {
 		memset(Sensors,0,sizeof(Sensors));
 
 
-		myfile = fopen("C:/Users/kristoferrosquist/Desktop/Training/Christmas_Calendar/2022/day15_input.txt", "r");
+		myfile = fopen("../../../Advent/2022_day15.txt", "r");
 
 		i = 0;
 		while(fgets(row, size, myfile)){ //get file row (until \n or EOF) and add 0 to string

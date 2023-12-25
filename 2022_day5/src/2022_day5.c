@@ -72,7 +72,7 @@ int main(void) {
 		Stack_init(&Stacks[i]);
 
 	FILE *myfile;
-	myfile = fopen("C:/Users/kristoferrosquist/Desktop/Training/Christmas_Calendar/2022/day5_input.txt", "r");
+	myfile = fopen("../../../Advent/2022_day5.txt", "r");
 	char *row;
 	int size = 500;
 	row = malloc(size*sizeof(char));

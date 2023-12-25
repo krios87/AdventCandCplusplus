@@ -58,7 +58,7 @@ int main(void) {
 
 
 	FILE *myfile;
-	myfile = fopen("C:/Users/kristoferrosquist/Desktop/Training/Christmas_Calendar/2022/day6_input.txt", "r");
+	myfile = fopen("../../../Advent/2022_day6.txt", "r");
 	char *row;
 	int size = 5000;
 	row = malloc(size*sizeof(char));

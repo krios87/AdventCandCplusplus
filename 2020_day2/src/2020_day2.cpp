@@ -35,7 +35,7 @@ unsigned long getmult(vector<int>& array){
 int main() {
 	ifstream inFile;
 
-	inFile.open("C:/Users/Kristofer Rosquist/Desktop/HoT/Training/Advent/2020_day2.txt");
+	inFile.open("../../../Advent/2020_day2.txt");
 
 	string str;
 
@@ -60,8 +60,6 @@ int main() {
 			}
 
 			CountCorrect += (countchar>=minsize) && (countchar <= maxsize);
-			//cout << "min:" << minsize << " max: " << maxsize << "char: " <<searchCH << " cunts " << countchar << endl;
-			//int isdigit =std::isdigit(str.at(0));
 
 
 

@@ -50,7 +50,7 @@ int main(void) {
 
 
 
-		myfile = fopen("C:/Users/kristoferrosquist/Desktop/Training/Christmas_Calendar/2022/day10_input.txt", "r");
+		myfile = fopen("../../../Advent/2022_day10.txt", "r");
 		//get map size and allocate memory
 		while(fgets(row, size, myfile)){ //get file row (until \n or EOF) and add 0 to string
 

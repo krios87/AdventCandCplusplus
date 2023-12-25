@@ -28,7 +28,7 @@ int main(void) {
 
 
 	FILE *myfile;
-		myfile = fopen("C:/Users/kristoferrosquist/Desktop/ESS/FBIS/Useful things/ChristmasCalendar/2021/day8_input.txt", "r");
+		myfile = fopen("../../../Advent/2021_day8.txt", "r");
 		char *buff;
 		int size = 10000;
 		buff = malloc(size*sizeof(char));
@@ -50,8 +50,6 @@ int main(void) {
 		sum=0;
 		while(fgets(buff, size, myfile)) { //get file row (until \n)
 
-			//printf("buff %s \n",buff);
-				//printf("hej");
 			for(i=0;i<10;i++){
 				codeLetter[i]=codeLength[i]=0;
 				number[i]=100000;
@@ -61,7 +59,6 @@ int main(void) {
 					length= 0;
 					while(isalpha(*rest)){
 						codeLetter[i] += 1 << (*rest-97);
-					//	printf("Letter: %c, code: %d, bit %d \n",*rest,*rest-97,1 << (*rest-97));
 						rest++;
 						codeLength[i]+=1;
 					} //count letters
@@ -91,10 +88,6 @@ int main(void) {
 					while(!isalpha(*rest)){
 						rest++;
 					} //find start of next word
-
-					//1 || 7 || 4 || 8 - in LED
-					//count1 += (length == 2) ||  (length == 3) || (length == 4) || (length == 7);
-					//printf("%s 1:%s hej: %d count %d\n",rest,rest1,strlen(rest)-strlen(rest1), count1);
 
 				}
 
@@ -132,12 +125,6 @@ int main(void) {
 					}
 				}
 
-				for(i=0;i<10;i++){
-				//	printf("i%d: %d\n",i,number[i]);
-				}
-
-
-
 				rest = strchr(buff, '|');
 				value = 0;
 				for(k=0;k<4;k++){
@@ -149,7 +136,6 @@ int main(void) {
 					while(isalpha(*rest)){
 						code += 1 << (*rest-97);
 						rest++;
-					//	codeLength[i]+=1;
 					} //count letters
 
 					for(i=0;i<10;i++){//search for code
@@ -158,17 +144,13 @@ int main(void) {
 
 						}
 					}
-
 				}
-
 				sum +=value;
 
 			j++;
 		}
 
-
 		printf("total: %d \n",sum);
-
 
 		   stop = clock();
 

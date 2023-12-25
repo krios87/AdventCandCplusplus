@@ -15,9 +15,8 @@
 int main(void) {
 	//https://adventofcode.com/2021/day/2
 	FILE *myfile;
-	myfile = fopen("C:/Users/kristoferrosquist/Desktop/ESS/FBIS/Useful things/ChristmasCalendar/2021/day2_input.txt", "r");
+	myfile = fopen("../../../Advent/2021_day2.txt", "r");
 	char buff[255];
-	//char strings[2] = {'1','\0'};
 	int i,j;
 	int valarray[1000];
 	char direction[10];

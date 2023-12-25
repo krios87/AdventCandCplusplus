@@ -65,7 +65,7 @@ int main() {
 
 	ifstream inFile;
 
-	inFile.open("C:/Users/Kristofer Rosquist/Desktop/HoT/Training/Advent/2020_day1.txt");
+	inFile.open("../../../Advent/2020_day1.txt");
 
 	string str;
 

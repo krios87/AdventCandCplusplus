@@ -28,7 +28,7 @@ int checkOverlap(int** Elfs){
 }
 int main(void) {
 	FILE *myfile;
-	myfile = fopen("C:/Users/kristoferrosquist/Desktop/Training/Christmas_Calendar/2022/day4_input.txt", "r");
+	myfile = fopen("../../../Advent/2022_day4.txt", "r");
 	char *row;
 	int size = 500;
 	row = malloc(size*sizeof(char));

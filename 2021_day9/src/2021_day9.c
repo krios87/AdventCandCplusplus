@@ -66,7 +66,6 @@ int CheckBasin(struct OceanDepth** Depth,int Columns, int Rows, int i, int j,int
 
 	int retval;
 	retval = 0;
-	//printf("i / max %d / %d, j / max %d / %d \n",i,Columns,j,Rows);
 	if((i<0) || (j<0) || (i>=Columns) || (j>=Rows)){
 		retval = 0;
 	}else if((Depth[i][j].value==9) ||(Depth[i][j].basinNumber!=0) ){ //dont count values 9 + ones which basin already have been set.
@@ -107,7 +106,7 @@ void insertionSort(int arr[], int n)
 
 int main(void) {
 	FILE *myfile;
-			myfile = fopen("C:/Users/kristoferrosquist/Desktop/ESS/FBIS/Useful things/ChristmasCalendar/2021/day9_input.txt", "r");
+			myfile = fopen("../../../Advent/2021_day9.txt", "r");
 			char *buff;
 			int size = 10000;
 			buff = malloc(size*sizeof(char));
@@ -123,8 +122,6 @@ int main(void) {
 			for(i=0;i<Arraysize;i++){
 				for(j=0;j<Arraysize;j++){
 					Depth_init(&Depth[i][j]);
-				//	Depth[i][j].isCandidate=0;
-				//	Depth[i][j].value=0;
 				}
 			}
 
@@ -164,7 +161,6 @@ int main(void) {
 					}
 				}
 
-				//printf("%\n",value);
 				j++;
 				nbrRows=j;
 			}
@@ -174,14 +170,9 @@ int main(void) {
 			for(j=0;j<nbrRows;j++){
 				for(i=0;i<linelength;i++){
 					if(Depth[i][j].isCandidate){
-				//		printf("%d*",Depth[i][j].value);
 						sum += Depth[i][j].value +1;
 					}
-					else{
-				//		printf("%d ",Depth[i][j].value);
-					}
 				}
-			//	printf("\n");
 			}
 
 
@@ -211,7 +202,6 @@ int main(void) {
 					biggest[1]=biggest[0];
 					biggest[0]=Basins[i];
 				}
-				//printf("size: %d ", Basins[i]);
 			}
 
 			insertionSort(Basins,k);

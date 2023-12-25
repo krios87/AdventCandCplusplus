@@ -31,7 +31,7 @@ void insertionSort(int arr[], int n)
 
 int main(void) {
 	FILE *myfile;
-	myfile = fopen("C:/Users/kristoferrosquist/Desktop/Training/Christmas_Calendar/2022/day1_input.txt", "r");
+	myfile = fopen("../../../Advent/2022_day1.txt", "r");
 	char *row;
 	int size = 1000;
 	row = malloc(size*sizeof(char));

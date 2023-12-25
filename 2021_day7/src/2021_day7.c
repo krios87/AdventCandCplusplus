@@ -14,7 +14,7 @@
 int main(void) {
 
 	FILE *myfile;
-		myfile = fopen("C:/Users/kristoferrosquist/Desktop/ESS/FBIS/Useful things/ChristmasCalendar/2021/day7_input.txt", "r");
+		myfile = fopen("../../../Advent/2021_day7.txt", "r");
 	int num,i,j;
 	int list[10000];
 	i=0;
@@ -24,9 +24,6 @@ int main(void) {
 	 i++;
 	}
 	int sizelist = i;
-
-	//for(i=0;i<10;i++)
-	//	printf("%d, size: %d  \n",list[i],sizelist);
 
 
 	unsigned long int max = 2000;

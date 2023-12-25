@@ -143,25 +143,20 @@ int main(void) {
 	memset(aTailCoordX,0,sizeof(aTailCoordX));
 	memset(aTailCoordY,0,sizeof(aTailCoordY));
 
-	myfile = fopen("C:/Users/kristoferrosquist/Desktop/Training/Christmas_Calendar/2022/day9_input.txt", "r");
+	myfile = fopen("../../../Advent/2022_day9.txt", "r");
 	//get map size and allocate memory
 
-	myfile2 = fopen("C:/Users/kristoferrosquist/Desktop/Training/Christmas_Calendar/2022/day9_output.txt", "w");
+	myfile2 = fopen("../../../Advent/2022_day9_output.txt", "w");
 	int rowNbr = 0;
 	while(fgets(row, size, myfile)){ //get file row (until \n or EOF) and add 0 to string
 
 
 		////WE need to check when the one in front is not moving! the one in front can also move diagonal!!
-		//printf("%s",row);
 		if(strstr(row,"R ")){ //
 			string = strstr(row, "R ")+2;
 			NbrOfSteps = atoi(string);
 			for(int i = 0;i<NbrOfSteps;i++){
 				diagmove = MoveRight(aTailCoordX[0], aTailCoordY[0], &HeadCoordX, &HeadCoordY, &aTailCoordX[0], &aTailCoordY[0],0);
-//				for(int j=1;j<10;j++){
-//					diagmove = MoveRight(aTailCoordX[i], aTailCoordY[i], &aTailCoordX[i-1], &aTailCoordY[i-1], &aTailCoordX[i], &aTailCoordY[i],diagmove);
-//				}
-//				AddNewPointToArray(pPoints,&NbrOfPoints,aTailCoordX[0],aTailCoordY[0]);
 			}
 		}else if(strstr(row,"L ")){ //
 			string = strstr(row, "L ")+2;
@@ -178,9 +173,6 @@ int main(void) {
 			NbrOfSteps = atoi(string);
 			for(int i = 0;i<NbrOfSteps;i++){
 				diagmove = MoveUp(aTailCoordX[0], aTailCoordY[0], &HeadCoordX, &HeadCoordY, &aTailCoordX[0], &aTailCoordY[0],0);
-//				for(int j=1;j<10;j++){
-//					diagmove = MoveUp(aTailCoordX[i], aTailCoordY[i], &aTailCoordX[i-1], &aTailCoordY[i-1], &aTailCoordX[i], &aTailCoordY[i],diagmove);
-//				}
 				AddNewPointToArray(pPoints,&NbrOfPoints,aTailCoordX[8],aTailCoordY[8]);
 			}
 		}else if(strstr(row,"D ")){ //
@@ -195,8 +187,6 @@ int main(void) {
 			}
 		}
 
-//					printf("tailX %d, tailY %d pos %d\n",aTailCoordX[9],aTailCoordY[9],NbrOfPoints);
-//					printf("headX %d, headY %d pos %d\n",HeadCoordX,HeadCoordY,NbrOfPoints);
 
 			int areasize = 40;
 
